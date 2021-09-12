@@ -1,0 +1,1 @@
+pkexec update-grub

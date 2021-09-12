@@ -1,0 +1,9 @@
+name="Convert Graphics Files"
+description="Converts graphic files such as images, videos, graphic editor native file formats, and more, to one another."
+
+choosefile="Choose a source file."
+chooseformat="Choose a file format."
+choosesave="Choose a save location."
+pleasewait="Please wait..."
+success="File successfully converted."
+failure="Something went wrong when I tried to convert your file."

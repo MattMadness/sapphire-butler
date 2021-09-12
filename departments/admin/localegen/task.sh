@@ -1,0 +1,1 @@
+pkexec locale-gen

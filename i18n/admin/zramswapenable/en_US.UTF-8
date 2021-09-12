@@ -1,0 +1,5 @@
+name="Enable zRAM for Swap Service"
+description="Enables the zRAM for Swap systemd service. Must be installed with admin/zramswapinstall first."
+
+failure="Something went wrong when I tried to enable zRAM for Swap. Did you install the files with \"admin/zramswapinstall\" first?"
+success="Successfully enabled the zRAM for Swap service."

@@ -1,0 +1,5 @@
+name="Disable zRAM for Swap Service"
+description="Disables the zRAM for Swap systemd service. Must be installed with admin/zramswapinstall first."
+
+failure="Something went wrong when I tried to disable zRAM for Swap. Did you install the files with \"admin/zramswapinstall\" first?"
+success="Successfully disabled the zRAM for Swap service."

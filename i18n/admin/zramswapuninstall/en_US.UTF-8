@@ -1,0 +1,2 @@
+name="Uninstall zRAM for Swap"
+description="Uninstalls the files required to use zRAM for Swap, which compresses RAM/memory when it becomes too big."

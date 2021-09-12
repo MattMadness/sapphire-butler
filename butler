@@ -1,0 +1,71 @@
+#!/bin/bash
+
+m_help() {
+	echo "sapphire-butler, a butler for your Unix-like operating system."
+	echo
+	echo "This program has preconfigured tasks that are categorized into"
+	echo "departments."
+	echo
+   	echo "Copyright (C) 2021 Matthew Evan"
+	echo
+	echo "This program is free software; you can redistribute it and/or modify"
+   	echo "under the terms of the GNU General Public License as published by"
+   	echo "Free Software Foundation; either version 3 of the License, or"
+	echo "(at your option) any later version."
+	echo
+	echo "This program is distributed in the hope that it will be useful,"
+	echo "but WITHOUT ANY WARRANTY; without even the implied warranty of"
+	echo "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the"
+	echo "GNU General Public License for more details."
+	echo
+	echo "You should have received a copy of the GNU General Public License"
+	echo "along with this program; if not, write to the Free Software Foundation,"
+	echo "Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA"
+	echo
+	echo "Syntax: butler [DEPARTMENT/TASK]"
+	echo "Available departments:"
+	echo "admin  Administrative Tasks"
+	echo "fun    Fun Tasks"
+	echo "net    Network/Internet Tasks"
+	echo "pkg    Package Management Tasks"
+	echo "prod   Productivity Tasks"
+	echo
+	echo "A yad powered GUI interface is available with this command:"
+	echo "butler prod/butleryad"
+}
+
+butlermsg() {
+	notify-send -u low "Sapphire Butler" "$1"
+	echo -e "\033[01;36m[❖ BUTLER]\033[0m $1"
+	#espeak "$1"
+}
+
+if [ -n "$1" ]; then
+	if [ -f "/usr/share/sapphire-butler/departments/$1/task.sh" ]; then
+		if [ -f "/usr/share/sapphire-butler/i18n/$1/$LANG" ]; then
+			source /usr/share/sapphire-butler/i18n/$1/$LANG
+		elif [ -f "/usr/share/sapphire-butler/i18n/$1/en_US.utf8" ]; then
+			source /usr/share/sapphire-butler/i18n/$1/en_US.utf8
+		elif [ -f "/usr/share/sapphire-butler/i18n/$1/en_US.UTF-8" ]; then
+			source /usr/share/sapphire-butler/i18n/$1/en_US.UTF-8
+		else
+			source /usr/share/sapphire-butler/i18n/$1/*
+		fi
+		butlermsg "Running task \"$name\"..."
+		source /usr/share/sapphire-butler/departments/$1/task.sh
+		butlermsg "Task \"$name\" completed."
+	elif [ -d "/usr/share/sapphire-butler/departments/$1" ]; then
+		echo "Available tasks in the $1 department:"
+		find "/usr/share/sapphire-butler/departments/$1/" -name task.sh | sed -e 's/\/usr\/share\/sapphire-butler\/departments\///g' -e 's/\/task.sh//g'
+	else
+		didyoumean=$(find "/usr/share/sapphire-butler/departments/" -iname $1 | sed 's/\/usr\/share\/sapphire-butler\/departments\///g')
+		if [ -f "/usr/share/sapphire-butler/departments/$didyoumean/task.sh" ]; then
+			echo "Did you mean to run:"
+			echo "butler $didyoumean"
+		else
+			echo "$1 is not a valid department or task."
+		fi
+	fi
+else
+	m_help
+fi

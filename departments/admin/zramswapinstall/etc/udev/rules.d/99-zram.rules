@@ -1,0 +1,1 @@
+KERNEL=="zram0", ATTR{disksize}="512M",TAG+="systemd"

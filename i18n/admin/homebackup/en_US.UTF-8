@@ -1,0 +1,7 @@
+name="Home Backup"
+description="Backs up all the files in your home directory into an archive, saving your files and configurations into one file."
+
+where="Where do you want your home directory archive to be stored? This file will be quite large, so save it somewhere with plenty of space."
+savelocation1="Home Backup saved as"
+savelocation2="at"
+failure="Something went wrong when I tried to backup your home."

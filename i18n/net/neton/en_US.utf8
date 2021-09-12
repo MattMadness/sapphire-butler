@@ -1,0 +1,7 @@
+name="Turn on networking"
+description="Turns on NetworkManager's networking abilities."
+su="false"
+
+saydoing="I'm turning on networking."
+saysuccess="I successfully turned on networking."
+sayfailure="Something went wrong when I tried to turn on networking."

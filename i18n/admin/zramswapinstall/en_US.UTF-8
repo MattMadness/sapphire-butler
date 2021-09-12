@@ -1,0 +1,4 @@
+name="Install zRAM for Swap"
+description="Installs the files required to use zRAM for Swap, which compresses RAM/memory when it becomes too big."
+
+finishedcopy="The required files to use zRAM for Swap have installed, and you now have a new systemd service called zram-swap.service. Enable this service by running \"sudo systemctl enable zram-swap\" and disable the service by running \"sudo systemctl disable zram-swap\". You can also use Butler to enable and disable the service, enable with \"butler admin/zramswapenable\" and disable with \"butler admin/zramswapdisable\". Then reboot to use zRAM for Swap."

@@ -1,0 +1,7 @@
+name="Turn off networking"
+description="Turns off NetworkManager's networking abilities."
+su="false"
+
+saydoing="I'm turning off networking."
+saysuccess="I successfully turned off networking."
+sayfailure="Something went wrong when I tried to turn off networking."
