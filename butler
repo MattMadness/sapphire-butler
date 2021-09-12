@@ -34,26 +34,30 @@ m_help() {
 	echo "butler prod/butleryad"
 }
 
+butlerrun() {
+	if [ -f "/usr/share/sapphire-butler/i18n/$1/$LANG" ]; then
+		source /usr/share/sapphire-butler/i18n/$1/$LANG
+	elif [ -f "/usr/share/sapphire-butler/i18n/$1/en_US.utf8" ]; then
+		source /usr/share/sapphire-butler/i18n/$1/en_US.utf8
+	elif [ -f "/usr/share/sapphire-butler/i18n/$1/en_US.UTF-8" ]; then
+		source /usr/share/sapphire-butler/i18n/$1/en_US.UTF-8
+	else
+		source /usr/share/sapphire-butler/i18n/$1/*
+	fi
+	butlermsg "Running task \"$name\"..."
+	source /usr/share/sapphire-butler/departments/$1/task.sh
+	butlermsg "Task \"$name\" completed."
+}
+
 butlermsg() {
 	notify-send -u low "Sapphire Butler" "$1"
 	echo -e "\033[01;36m[❖ BUTLER]\033[0m $1"
-	#espeak "$1"
+	#espeak "$1" # Cool kids use espeak.
 }
 
 if [ -n "$1" ]; then
 	if [ -f "/usr/share/sapphire-butler/departments/$1/task.sh" ]; then
-		if [ -f "/usr/share/sapphire-butler/i18n/$1/$LANG" ]; then
-			source /usr/share/sapphire-butler/i18n/$1/$LANG
-		elif [ -f "/usr/share/sapphire-butler/i18n/$1/en_US.utf8" ]; then
-			source /usr/share/sapphire-butler/i18n/$1/en_US.utf8
-		elif [ -f "/usr/share/sapphire-butler/i18n/$1/en_US.UTF-8" ]; then
-			source /usr/share/sapphire-butler/i18n/$1/en_US.UTF-8
-		else
-			source /usr/share/sapphire-butler/i18n/$1/*
-		fi
-		butlermsg "Running task \"$name\"..."
-		source /usr/share/sapphire-butler/departments/$1/task.sh
-		butlermsg "Task \"$name\" completed."
+		butlerrun "$1"
 	elif [ -d "/usr/share/sapphire-butler/departments/$1" ]; then
 		echo "Available tasks in the $1 department:"
 		find "/usr/share/sapphire-butler/departments/$1/" -name task.sh | sed -e 's/\/usr\/share\/sapphire-butler\/departments\///g' -e 's/\/task.sh//g'

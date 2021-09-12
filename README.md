@@ -1,6 +1,10 @@
 # Sapphire Butler
 
-Sapphire Butler is an extensable task executor that aims to make certain tasks easier to do or simply more user friendly. 
+Sapphire Butler is an extensible task executor that aims to make certain tasks easier to do or simply more user friendly. 
+
+## Installation
+
+Simply run `sudo make install` to install Sapphire Butler.
 
 ## Usage
 
@@ -20,7 +24,7 @@ admin/zramswapdisable
 admin/zramswapinstall
 ```
 
-To run any task, specify the department followed by the task, seperated by a forwards slash.
+To run any task, specify the department followed by the task, separated by a forwards slash.
 
 ```bash
 > butler net/neton
@@ -83,6 +87,8 @@ Things to note:
 xdg-open http://hyades.shoutca.st:8043/stream
 ```
 
+Feel free to use this directory for any files that your task needs such as images or configuration files.
+
 We have now created a task. Go back to the root of the source tree and then run `sudo make install` to install Sapphire Butler, then run your task to test it.
 
-There are infinite possiblities of what you can put into a task. Check out some of the preexisting tasks to learn more tips and tricks.
+There are infinite possibilities of what you can put into a task. Check out some of the preexisting tasks to learn more tips and tricks.
