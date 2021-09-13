@@ -35,6 +35,13 @@ To run any task, specify the department followed by the task, separated by a for
 
 A yad-powered GUI interface is available by executing `butler prod/butleryad`.
 
+## Developer Todo
+
+* Either restrict platform support to Arch based Linux distros or get perfect cross-distro support.
+* Translate all tasks into at least two non-English languages.
+* Code 50 Tasks.
+* Configuration File Support.
+
 ## Contributing / Adding Tasks
 
 Adding a task to Sapphire Butler is easy and only requires a bit of shell scripting knowledge (or more, if you are doing something more complicated). 

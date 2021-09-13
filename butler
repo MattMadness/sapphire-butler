@@ -62,7 +62,7 @@ if [ -n "$1" ]; then
 		echo "Available tasks in the $1 department:"
 		find "/usr/share/sapphire-butler/departments/$1/" -name task.sh | sed -e 's/\/usr\/share\/sapphire-butler\/departments\///g' -e 's/\/task.sh//g'
 	else
-		didyoumean=$(find "/usr/share/sapphire-butler/departments/" -iname $1 | sed 's/\/usr\/share\/sapphire-butler\/departments\///g')
+		didyoumean=$(find "/usr/share/sapphire-butler/departments/" -iname "$1" | sed 's/\/usr\/share\/sapphire-butler\/departments\///g')
 		if [ -f "/usr/share/sapphire-butler/departments/$didyoumean/task.sh" ]; then
 			echo "Did you mean to run:"
 			echo "butler $didyoumean"

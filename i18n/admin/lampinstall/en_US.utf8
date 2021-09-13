@@ -1,0 +1,4 @@
+name="Install a LAMP Stack"
+description="Installs and configures a LAMP Server Stack."
+
+sqlsetupnotice="Don't forget to run mysql_secure_installation in your Terminal."
