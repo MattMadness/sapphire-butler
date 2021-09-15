@@ -12,16 +12,19 @@ Like real life butler work, *Tasks* are organized into *Departments*. There are 
 
 ```bash
 > butler admin
-Available tasks in the admin department:
-admin/homebackup
-admin/ntpon
-admin/updategrub
-admin/zramswapenable
-admin/ntpoff
-admin/zramswapuninstall
-admin/localegen
-admin/zramswapdisable
-admin/zramswapinstall
+[❖ BUTLER] Available tasks in the admin department:
+	Name                           Department/Task               
+------------------------------------------------------------
+Home Backup                    admin/homebackup              
+Turn on NTP                    admin/ntpon                   
+Install a LAMP Stack           admin/lampinstall             
+Update GRUB Bootloader Config  admin/updategrub              
+Enable zRAM for Swap Service   admin/zramswapenable          
+Turn off NTP                   admin/ntpoff                  
+Uninstall zRAM for Swap        admin/zramswapuninstall       
+Generate Locales               admin/localegen               
+Disable zRAM for Swap Service  admin/zramswapdisable         
+Install zRAM for Swap          admin/zramswapinstall        
 ```
 
 To run any task, specify the department followed by the task, separated by a forwards slash.

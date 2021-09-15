@@ -1,0 +1,12 @@
+name="Convert Document Files"
+description="Use pandoc to convert document files."
+
+choosefile="Choose a file you wish to be converted."
+choosesave="What do you want to have your file converted to and where?"
+inputformattxt="Input Format"
+inputformatdialog="Choose the file format of the the file you just selected."
+outputformattxt="Output Format"
+outputformatdialog="Choose the file format you wish to have your Input File converted to."
+pleasewait="Please wait..."
+success="Successfully converted your file."
+failure="Something went wrong when I tried to convert your file. Do you have pandoc and texlive-core installed? Did you choose documents as input and output files?"

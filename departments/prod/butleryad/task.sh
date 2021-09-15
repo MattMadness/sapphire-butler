@@ -18,7 +18,7 @@ formattasklist() {
 		echo "$description "
 	done
 }
-declare -a do=($(formattasklist | yad --list --title="$taskname" --window-icon="/usr/share/sapphire-butler/butler.png" --geometry=600x500 --text="$yadtext" --column="Do?" --column="Name" --column="Department/Task" --column="Description" --checklist | cut -d '|' -f3))
+declare -a do=($(formattasklist | yad --list --title="$taskname" --window-icon="/usr/share/sapphire-butler/butler.png" --geometry=800x700 --text="$yadtext" --column="Do?" --column="Name" --column="Department/Task" --column="Description" --checklist | cut -d '|' -f3))
 len=${#do[@]}
 for (( i = 0; i < len; i++ )); do
 	butler ${do[$i]}
