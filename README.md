@@ -2,9 +2,17 @@
 
 Sapphire Butler is an extensible task executor that aims to make certain tasks easier to do or simply more user friendly. 
 
+It is designed to work perfectly on Sapphire Linux and it's parent distributions Arch and Manjaro as well as their children, but there is only a little support for other distributions and the use of Sapphire Butler on those systems is cautioned against until proper support can be given for them.
+
 ## Installation
 
-Simply run `sudo make install` to install Sapphire Butler.
+### Arch User Repository
+
+Sapphire Butler is available in the Arch User Repository as `sapphire-butler`. Install it with your favorite AUR helper.
+
+### Manual Install
+
+Clone the Git repository with `git clone https://codeberg.org/Sapphire/sapphire-butler` run `sudo make install` in the source tree to install Sapphire Butler manually.
 
 ## Usage
 
@@ -57,7 +65,7 @@ mkdir lofihiphopradio
 cd lofihiphopradio
 ```
 
-Create a file that is named whatever language you speak. If you use the `$TASK` environment variable here, the language is automatically chosen based on your current language.
+Create a file that is named the language code of whatever language you speak. If you use the `$LANG` environment variable here, the language is automatically chosen based on your current language.
 
 ```bash
 vim en_US.UTF8

@@ -9,6 +9,7 @@ install:
 	@cp -r departments $(PREFIX)/usr/share/sapphire-butler/
 	@cp -r i18n $(PREFIX)/usr/share/sapphire-butler/
 	@chmod -R a+r $(PREFIX)/usr/share/sapphire-butler
+	@mkdir --parents $(PREFIX)/usr/bin
 	@cp butler $(PREFIX)/usr/bin/
 	@chmod +x $(PREFIX)/usr/bin/butler
 

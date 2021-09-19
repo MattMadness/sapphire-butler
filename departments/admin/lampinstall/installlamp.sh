@@ -1,4 +1,5 @@
-pkcon install -y apache apache2 mariadb mariadb-clients libmariadbclient php php-apache
+#pkcon install -y apache mariadb mariadb-clients libmariadbclient php php-apache
+pacman -S --noconfirm apache mariadb mariadb-clients libmariadbclient php php-apache
 sed -i 's/LoadModule unique_id_module modules\/mod_unique_id.so/#LoadModule unique_id_module modules\/mod_unique_id.so/g' /etc/httpd/conf/httpd.conf
 mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
 systemctl enable httpd

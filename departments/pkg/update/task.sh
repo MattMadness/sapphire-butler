@@ -1,1 +1,7 @@
-pkexec pkcon update -y
+if [ -f "/usr/bin/pamac" ]; then
+    pkexec pamac upgrade --noconfirm
+elif [ -f "/usr/bin/pacman" ]; then
+    pkexec pacman -Syu --noconfirm
+else
+    pkexec pkcon update -y
+fi
