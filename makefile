@@ -9,6 +9,12 @@ install:
 	@cp -r departments $(PREFIX)/usr/share/sapphire-butler/
 	@cp -r i18n $(PREFIX)/usr/share/sapphire-butler/
 	@chmod -R a+r $(PREFIX)/usr/share/sapphire-butler
+	@mkdir --parents $(PREFIX)/usr/share/applications
+	@cp sapphire-butler-yad.desktop $(PREFIX)/usr/share/applications/
+	@mkdir --parents $(PREFIX)/usr/share/pixmaps
+	@cp sapphire-butler.svg $(PREFIX)/usr/share/pixmaps/
+	@mkdir --parents $(PREFIX)/etc/
+	@cp --no-clobber sapphire-butler.conf $(PREFIX)/etc/
 	@mkdir --parents $(PREFIX)/usr/bin
 	@cp butler $(PREFIX)/usr/bin/
 	@chmod +x $(PREFIX)/usr/bin/butler

@@ -1,6 +1,19 @@
 #!/bin/bash
 
+# Set default conf variables
+enable_notifications="true"
+enable_espeak="false"
+perfer_cli="false"
+
+# Obtain custom configurations
+if [ -f "${HOME}/.config/sapphire-butler.conf" ]; then
+   source ${HOME}/.config/sapphire-butler.conf
+elif [ -f "/etc/sapphire-butler.conf" ]; then
+   source /etc/sapphire-butler.conf
+fi
+
 m_help() {
+    # Display help message
     echo "sapphire-butler, a butler for Sapphire Linux."
     echo
     echo "This program has preconfigured tasks that are categorized into"
@@ -35,34 +48,45 @@ m_help() {
 }
 
 butlerlang() {
-   if [ -f "/usr/share/sapphire-butler/i18n/$1/$LANG" ]; then
+    # Obtain variable data from language files
+    if [ -f "/usr/share/sapphire-butler/i18n/$1/$LANG" ]; then
     	source /usr/share/sapphire-butler/i18n/$1/$LANG
-   elif [ -f "/usr/share/sapphire-butler/i18n/$1/en_US.utf8" ]; then
+    elif [ -f "/usr/share/sapphire-butler/i18n/$1/en_US.utf8" ]; then
        	source /usr/share/sapphire-butler/i18n/$1/en_US.utf8
-   elif [ -f "/usr/share/sapphire-butler/i18n/$1/en_US.UTF-8" ]; then
+    elif [ -f "/usr/share/sapphire-butler/i18n/$1/en_US.UTF-8" ]; then
        	source /usr/share/sapphire-butler/i18n/$1/en_US.UTF-8
-   else
+    else
        	source /usr/share/sapphire-butler/i18n/$1/*
-   fi
+    fi
 }
 
 butlerrun() {
-   butlerlang $1
-   butlermsg "Running task \"$name\"..."
-   source /usr/share/sapphire-butler/departments/$1/task.sh
-   butlermsg "Task \"$name\" completed."
+    # Runs a task
+    butlerlang $1
+    butlermsg "Running task \"$name\"..."
+    source /usr/share/sapphire-butler/departments/$1/task.sh
+    butlermsg "Task \"$name\" completed."
 }
 
 butlermsg() {
-    notify-send -u low "Sapphire Butler" "$1"
+    # Displays the requested message according to the user's settings
     echo -e "\033[01;36m[❖ BUTLER]\033[0m $1"
-    #espeak "$1" # Cool kids use espeak.
+    if [ "$enable_notifications" == "true" ]; then
+	notify-send -u low "Sapphire Butler" "$1"
+    fi
+    if [ "$enable_espeak" == "true" ]; then
+	espeak "$1" # "Cool" hacker kids use espeak.
+    fi
 }
 
+# Check if the user has supplied an argument
 if [ -n "$1" ]; then
+    # Find out what the user wants for each argument.
     for tasktodo in $@; do
+	# If the user has supplied a task as an arguement, run it
       	if [ -f "/usr/share/sapphire-butler/departments/$tasktodo/task.sh" ]; then
 	    butlerrun "$tasktodo"
+	# If the user has supplied a department as an arguement, list the tasks in that department
         elif [ -d "/usr/share/sapphire-butler/departments/$tasktodo" ]; then
             echo -e "\033[01;36m[❖ BUTLER]\033[0m Available tasks in the $tasktodo department:"
             declare -a tasksearchresults=($(find "/usr/share/sapphire-butler/departments/$tasktodo/" -name task.sh | sed -e 's/\/usr\/share\/sapphire-butler\/departments\///g' -e 's/\/task.sh//g'))
@@ -74,15 +98,19 @@ if [ -n "$1" ]; then
                  echo
             done
         else
+	    # The user did not supply a department or task, so check if the user supplied only a task name without the department
             didyoumean=$(find "/usr/share/sapphire-butler/departments/" -iname "$tasktodo" | sed 's/\/usr\/share\/sapphire-butler\/departments\///g')
+	    # If the user supplied a task name without the department, recommend them to run it with the department
 	    if [ -f "/usr/share/sapphire-butler/departments/$didyoumean/task.sh" ]; then
                  echo -e "\033[01;36m[❖ BUTLER]\033[0m Did you mean to run:"
                  echo "butler $didyoumean"
 	    else
+		 # The user did not supply a valid department or task
                  echo -e "\033[01;36m[❖ BUTLER]\033[0m $tasktodo is not a valid department or task."
 	    fi
         fi
     done
 else
+    # If no arguements were passed, display the help message
     m_help
 fi
