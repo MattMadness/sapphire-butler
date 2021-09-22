@@ -22,3 +22,4 @@ install:
 uninstall:
 	@rm -f $(PREFIX)/usr/bin/butler
 	@rm -rf $(PREFIX)/usr/share/sapphire-butler
+	@rm $(PREFIX)/usr/share/pixmaps/sapphire-butler.svg
