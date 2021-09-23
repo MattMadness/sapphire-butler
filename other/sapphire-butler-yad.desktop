@@ -2,9 +2,9 @@
 Name=Sapphire Butler YAD
 Comment=Sapphire Butler's yad powered GUI interface
 Exec=butler prod/butleryad
-Icon=/usr/share/pixmaps/sapphire-butler.svg
+Icon=/usr/share/pixmaps/butlerface.svg
 Terminal=true
 Type=Application
 StartupNotify=true
-Categories=GTK;Utility;Admin;Administration;Settings;
-Keywords=Butler;Task;Department;YAST;yad;
+Categories=GTK;Utility;Admin;Administration;admin;
+Keywords=Sapphire;Butler;Task;Department;YAST;yad;

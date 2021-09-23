@@ -43,6 +43,8 @@ m_help() {
     echo "pkg    Package Management Tasks"
     echo "prod   Productivity Tasks"
     echo
+    echo "Specify a department without a task to see tasks in that department."
+    echo
     echo "A yad powered GUI interface is available with this command:"
     echo "butler prod/butleryad"
 }
