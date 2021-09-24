@@ -1,5 +1,5 @@
 if [ -f "/usr/bin/pamac" ]; then
-    pkexec pamac upgrade --noconfirm
+    pkexec pamac upgrade --no-confirm
 elif [ -f "/usr/bin/pacman" ]; then
     pkexec pacman -Syu --noconfirm
 else

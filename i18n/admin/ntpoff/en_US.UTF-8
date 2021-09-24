@@ -1,2 +1,5 @@
 name="Turn off NTP"
 description="Uses timedatectl to disable NTP, which stops syncing the system clock."
+
+success="I successfully turned off NTP."
+failure="Something went wrong when I tried to turn off NTP."

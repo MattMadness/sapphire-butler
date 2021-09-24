@@ -1,0 +1,5 @@
+name="Sync Package Repositories"
+description="Sync the package repositories."
+
+success="I was able to successfully sync package repositories."
+failure="Something went wrong when I tried to sync package repositories."

@@ -3,7 +3,7 @@
 # Set default conf variables
 enable_notifications="true"
 enable_espeak="false"
-perfer_cli="false"
+aur_helper="pikaur"
 
 # Obtain custom configurations
 if [ -f "${HOME}/.config/sapphire-butler.conf" ]; then

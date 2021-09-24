@@ -1,2 +1,5 @@
 name="Turn on NTP"
 description="Uses timedatectl to enable NTP, which starts syncing the system clock."
+
+success="I successfully turned on NTP."
+failure="Something went wrong when I tried to turn on NTP."

@@ -1,0 +1,4 @@
+name="Install Web Browsers"
+description="Choose web browsers to install."
+
+yadtext="Choose some web browsers to install. A package with a custom license or is All Rights Reserved is usually proprietary and does not respect your freedom, and the installation of such package is discouraged (ex. Google Chrome is proprietary, but Chromium is not and offers the same experience and is a good alternative)."
