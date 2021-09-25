@@ -91,7 +91,7 @@ if [ -n "$1" ]; then
 	# If the user has supplied a department as an arguement, list the tasks in that department
         elif [ -d "/usr/share/sapphire-butler/departments/$tasktodo" ]; then
             echo -e "\033[01;36m[❖ BUTLER]\033[0m Available tasks in the $tasktodo department:"
-            declare -a tasksearchresults=($(find "/usr/share/sapphire-butler/departments/$tasktodo/" -name task.sh | sed -e 's/\/usr\/share\/sapphire-butler\/departments\///g' -e 's/\/task.sh//g'))
+            declare -a tasksearchresults=($(find "/usr/share/sapphire-butler/departments/$tasktodo/" -name task.sh | sed -e 's/\/usr\/share\/sapphire-butler\/departments\///g' -e 's/\/task.sh//g' | sort))
             printf "\t%-35s %-30s" "Name" "Department/Task"
             echo -e "\n-----------------------------------------------------------------"
             for tasksearch in ${tasksearchresults[@]}; do

@@ -2,7 +2,7 @@
 
 response="0"
 
-echo "Welcome to this easy Sapphire Butler task making tool."
+echo "Welcome to this easy Sapphire Butler Task Editor."
 echo
 echo "Would you like to do?"
 echo "(1) Create a new task."
@@ -14,7 +14,7 @@ if [ $response == "1" ]; then
     read -r -p "Type a [DEPARTMENT]/[TASK] to create: " dt
 
     if [[ -f "departments/$dt/task.sh" ]]; then
-        echo "Sorry homie, the task \"$dt\" already exists."
+        echo "Sorry $(whoami), the task \"$dt\" already exists."
         exit
     fi
 
@@ -33,9 +33,9 @@ if [ $response == "1" ]; then
         echo "(4) Exit."
         read -r -p "? " response
         if [ $response == "1" ]; then
-    	    vim i18n/$dt/$LANG
+    	    editor i18n/$dt/$LANG
         elif [ $response == "2" ]; then
-    	    vim departments/$dt/task.sh
+    	    editor departments/$dt/task.sh
         elif [ $response == "3" ]; then
             $SHELL
         fi
@@ -44,7 +44,7 @@ elif [ $response == "2" ]; then
     read -r -p "Type a [DEPARTMENT]/[TASK] to edit: " dt
 
     if [[ ! -f "departments/$dt/task.sh" ]]; then
-        echo "Sorry homie, the task \"$dt\" does not exist."
+        echo "Sorry $(whoami), the task \"$dt\" does not exist."
         exit
     fi
 
@@ -58,9 +58,9 @@ elif [ $response == "2" ]; then
         echo "(4) Exit."
         read -r -p "? " response
         if [ $response == "1" ]; then
-    	    vim i18n/$dt/$LANG
+    	    editor i18n/$dt/$LANG
         elif [ $response == "2" ]; then
-    	    vim departments/$dt/task.sh
+    	    editor departments/$dt/task.sh
         elif [ $response == "3" ]; then
             $SHELL
         fi
