@@ -64,7 +64,7 @@ elif [ $response == "2" ]; then
         if [ $response == "1" ]; then
     	    $EDITOR i18n/$dt/$LANG
         elif [ $response == "2" ]; then
-    	    vim departments/$dt/task.sh
+    	    $EDITOR departments/$dt/task.sh
         elif [ $response == "3" ]; then
             $SHELL
         fi
