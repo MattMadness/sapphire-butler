@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [ ! -n "$EDITOR" ]; then 
+    EDITOR=vim
+fi
+
 response="0"
 
 echo "Welcome to this easy Sapphire Butler Task Editor."
@@ -33,9 +37,9 @@ if [ $response == "1" ]; then
         echo "(4) Exit."
         read -r -p "? " response
         if [ $response == "1" ]; then
-    	    editor i18n/$dt/$LANG
+    	    $EDITOR i18n/$dt/$LANG
         elif [ $response == "2" ]; then
-    	    editor departments/$dt/task.sh
+    	    $EDITOR departments/$dt/task.sh
         elif [ $response == "3" ]; then
             $SHELL
         fi
@@ -58,9 +62,9 @@ elif [ $response == "2" ]; then
         echo "(4) Exit."
         read -r -p "? " response
         if [ $response == "1" ]; then
-    	    editor i18n/$dt/$LANG
+    	    $EDITOR i18n/$dt/$LANG
         elif [ $response == "2" ]; then
-    	    editor departments/$dt/task.sh
+    	    vim departments/$dt/task.sh
         elif [ $response == "3" ]; then
             $SHELL
         fi
