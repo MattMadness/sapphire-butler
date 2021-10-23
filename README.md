@@ -2,7 +2,7 @@
 
 Sapphire Butler is an extensible task executor that aims to make certain tasks easier to do or simply more user friendly. 
 
-It is designed to work perfectly on Sapphire Linux and it's parent distributions Arch and Manjaro as well as their children, but there is only a little support for other distributions and the use of Sapphire Butler on those systems is cautioned against until proper support can be given for them.
+It is designed to work perfectly on Sapphire GNU/Linux and it's parent distributions Arch and Parabola as well as their children, but there is only a little support for other distributions and the use of Sapphire Butler on those systems is cautioned against until proper support can be given for them.
 
 ## Installation
 
