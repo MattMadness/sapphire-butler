@@ -51,7 +51,6 @@ A yad-powered GUI interface is available by executing `butler prod/butleryad`.
 * Either restrict platform support to Arch based Linux distros or get perfect cross-distro support.
 * Translate all tasks into at least two non-English languages.
 * Code 50 Tasks.
-* Configuration File Support.
 
 ## Contributing / Adding Tasks
 
