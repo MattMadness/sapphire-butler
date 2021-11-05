@@ -5,8 +5,9 @@ formatbrowserlist() {
     for browser in ${browsers[@]}; do
         echo "FALSE "
         echo "$browser "
-        pikaur -Si $browser | grep "Licenses" | cut -d ':' -f2 | xargs
-        pikaur -Si $browser | grep "Description" | cut -d ':' -f2 | xargs
+	browserinfo="$(pikaur -Si $browser)"
+        echo "${browserinfo}" | grep "Licenses" | cut -d ':' -f2 | xargs
+        echo "${browserinfo}" | grep "Description" | cut -d ':' -f2 | xargs
     done
 }
 

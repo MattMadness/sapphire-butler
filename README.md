@@ -1,6 +1,10 @@
 # Sapphire Butler
 
-Sapphire Butler is an extensible task executor that aims to make certain tasks easier to do or simply more user friendly. 
+<p align="center">
+  <img src="art/butler.svg" />
+</p>
+
+Sapphire Butler is an extensible task executor and shell script codebase that aims to make certain tasks easier to do or simply more user friendly. 
 
 It is designed to work perfectly on Sapphire GNU/Linux and it's parent distributions Arch and Parabola as well as their children, but there is only a little support for other distributions and the use of Sapphire Butler on those systems is cautioned against until proper support can be given for them.
 
@@ -48,13 +52,22 @@ A yad-powered GUI interface is available by executing `butler prod/butleryad`.
 
 ## Developer Todo
 
-* Either restrict platform support to Arch based Linux distros or get perfect cross-distro support.
-* Translate all tasks into at least two non-English languages.
 * Code 50 Tasks.
+* Translate all tasks into at least two non-English languages.
 
 ## Contributing / Adding Tasks
 
 Adding a task to Sapphire Butler is easy and only requires a bit of shell scripting knowledge (or more, if you are doing something more complicated). 
+
+If you want to make this process more simple, there is a Task Editor included with Sapphire Butler. If you want to make edits to the source tree, you can run the `taskeditor.sh` script with `bash taskeditor.sh` command. 
+
+If you have Sapphire Butler installed, you can use it's `admin/taskeditor` task to make edits or add to your Sapphire Butler installation. Just remember that once you upgrade, your changes might be overwritten.
+
+In this tutorial, we will manually create a task to play a Lofi Hip Hop Radio Station.
+
+### Creating the Language File
+
+We need to create a language file so that your task has a name and description and is translatable.
 
 First go into the i18n directory of the source tree, choose what department you want to use, and then change into that directory in the source tree and make another directory with your task name. Then change into that directory.
 
@@ -64,19 +77,15 @@ mkdir lofihiphopradio
 cd lofihiphopradio
 ```
 
-Create a file that is named the language code of whatever language you speak. If you use the `$LANG` environment variable here, the language is automatically chosen based on your current language.
+Create a file that is named the language code of whatever language you making the language file for. For example, English is en, Spanish is es, Chinese is zh, French is fr, German is de, Italian is it, Japanese is ja, Russian is ru. Check [here](https://saimana.com/list-of-country-locale-code/) for a larger list.
+
+This will create a language file for English and open it in the Vim text editor. Use `nano` instead of `vim` if you don't know how to use Vim (If you don't know what it is, you don't).
 
 ```bash
-vim en_US.UTF8
+vim en
 ```
 
-OR
-
-```bash
-vim $LANG
-```
-
-Now we need to define variables that will contain text in our spoken language. The required variables are `name` and `description`. We should also define variables here that will contain text for our task later, but this is optional if there are none needed.
+In this file, we need to define variables that will contain text in our spoken language. The required variables are `name` and `description`. We should also define variables here that will contain text for our task later, but this is optional if there are none needed.
 
 ```bash
 name="Play LoFi Hip Hop Radio"
@@ -84,6 +93,8 @@ description="Plays a LoFi Hip Hop Icecast Radio Station."
 ```
 
 Write that file and then go back to the root of the source tree.
+
+### Creating the Task Script
 
 Next choose what department you want to use, and then change into that directory in the source tree and make another directory with your task name. Then change into that directory.
 
@@ -98,7 +109,9 @@ Create a file called `task.sh`. Here we write the script that will be executed w
 Things to note:
 * There is no need to specify a shebang (ex. `#!/bin/bash`).
 * Don't use `echo` or `notify-send`. Use `butlermsg` to send messages, if needed.
-* There shouldn't be any plaintext in this file unless it is being translated in the script. Use the variables you should have set in the language file in the `i18n` directory.
+* There shouldn't be any plaintext in this file unless it is being translated in the script. Use the variables you should have set in the language file in the `i18n` directory as that file is sourced before this script is run.
+
+The contents of our `task.sh` will contain the following:
 
 ```bash
 xdg-open http://hyades.shoutca.st:8043/stream

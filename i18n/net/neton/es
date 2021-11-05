@@ -1,0 +1,5 @@
+name="Encender redes"
+description="Enciende las habilidades de red de NetworkManager."
+
+saysuccess="Me encendí con éxito en red."
+sayfailure="Algo salió mal cuando intenté encender la red."

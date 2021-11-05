@@ -1,7 +1,21 @@
 #!/bin/bash
 
+# Get language
+BLANG=$(echo $LANG | cut -c1-2)
+
+response="0"
+
+echo "Use \"${BLANG}\" as the language?"
+read -r -p "(y/n) " response
+
+if [ $response == "n" ]; then
+	echo "Type a new language code. For example, English is en, Spanish is es, Chinese is zh, French is fr, German is de, Italian is it, Japanese is ja, Russian is ru. Check https://saimana.com/list-of-country-locale-code/ for a larger list."
+	read -r -p "Language Code: " BLANG
+fi	
+echo
+
 if [ ! -n "$EDITOR" ]; then 
-    EDITOR=vim
+    EDITOR=nano
 fi
 
 response="0"
@@ -37,7 +51,7 @@ if [ $response == "1" ]; then
         echo "(4) Exit."
         read -r -p "? " response
         if [ $response == "1" ]; then
-    	    $EDITOR i18n/$dt/$LANG
+    	    $EDITOR i18n/$dt/$BLANG
         elif [ $response == "2" ]; then
     	    $EDITOR departments/$dt/task.sh
         elif [ $response == "3" ]; then
@@ -62,7 +76,7 @@ elif [ $response == "2" ]; then
         echo "(4) Exit."
         read -r -p "? " response
         if [ $response == "1" ]; then
-    	    $EDITOR i18n/$dt/$LANG
+    	    $EDITOR i18n/$dt/$BLANG
         elif [ $response == "2" ]; then
     	    $EDITOR departments/$dt/task.sh
         elif [ $response == "3" ]; then

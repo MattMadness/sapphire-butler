@@ -1,0 +1,4 @@
+name="Install Graphic Design Packages"
+description="Choose image processors, raster/vector/specialized image editors, font editors, 2D/3D design/animation software, and color pickers to install."
+
+yadtext="Choose some graphic design packages to install. A package with a custom license or is All Rights Reserved is usually proprietary and does not respect your freedom, and the installation of such package is discouraged. Some fantastic packages are gimp, inkscape, krita and blender, however feel free to explore others."

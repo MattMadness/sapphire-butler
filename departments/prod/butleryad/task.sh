@@ -1,16 +1,15 @@
+BLANG=$(echo $LANG | cut -c1-2)
 taskname="$name"
 declare -a tasks=($(find /usr/share/sapphire-butler/departments/ -iname task.sh | sed -e 's/\/usr\/share\/sapphire-butler\/departments\///g' -e 's/\/task.sh//g' | sort))
 len=${#tasks[@]}
 formattasklist() {
 	for (( i = 0; i < len; i++ )); do
-		if [ -f "/usr/share/sapphire-butler/i18n/${tasks[$i]}/$LANG" ]; then
-			source /usr/share/sapphire-butler/i18n/${tasks[$i]}/$LANG
-		elif [ -f "/usr/share/sapphire-butler/i18n/${tasks[$i]}/en_US.utf8" ]; then
-			source /usr/share/sapphire-butler/i18n/${tasks[$i]}/en_US.utf8
-		elif [ -f "/usr/share/sapphire-butler/i18n/${tasks[$i]}/en_US.UTF-8" ]; then
-			source /usr/share/sapphire-butler/i18n/${tasks[$i]}/en_US.UTF-8
+		if [ -f "/usr/share/sapphire-butler/i18n/$1/$BLANG" ]; then
+			source /usr/share/sapphire-butler/i18n/$1/$BLANG
+		elif [ -f "/usr/share/sapphire-butler/i18n/$1/en" ]; then
+			source /usr/share/sapphire-butler/i18n/$1/en
 		else
-			source /usr/share/sapphire-butler/i18n/${tasks[$i]}/*
+			source /usr/share/sapphire-butler/i18n/$1/$(find -type f /usr/share/sapphire-butler/i18n/$1/ | head -1)
 		fi
 		echo "FALSE "
 		echo "$name "
