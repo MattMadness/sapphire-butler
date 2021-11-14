@@ -1,4 +1,5 @@
 name="Sapphire Butler GUI"
 description="A yad-powered graphical user interface for Sapphire Butler"
 su=false
-yadtext="Choose some tasks that you would like done."
+yadtext="Choose a task that you would like done."
+yadtextdomore="Would you like to execute another task?"
