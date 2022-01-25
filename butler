@@ -122,7 +122,7 @@ if [ -n "$1" ]; then
             done
         else
 	    # The user did not supply a department or task, so check if the user supplied only a task name without the department
-            didyoumean=$(find "/usr/share/sapphire-butler/departments/" -name "$tasktodo" | sed 's/\/usr\/share\/sapphire-butler\/departments\///g')
+            didyoumean=$(find "/usr/share/sapphire-butler/departments/" -name "$tasktodo" &> /dev/null | sed 's/\/usr\/share\/sapphire-butler\/departments\///g')
 	    # If the user supplied a task name without the department, recommend them to run it with the department
         # Actually we just run that task we found because why not.
 	    if [ -f "/usr/share/sapphire-butler/departments/$didyoumean/task.sh" ]; then

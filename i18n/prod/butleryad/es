@@ -2,3 +2,4 @@ name="Sapphire Butler GUI"
 description="Una interfaz gráfica de usuario de yad-powered para el Sapphire Butler"
 su=false
 yadtext="Elija algunas tareas que le gustaría hacer."
+yadtextdomore="¿Le gustaría ejecutar otra tarea?"

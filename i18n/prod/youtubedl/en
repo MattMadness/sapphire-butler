@@ -1,5 +1,8 @@
 name="Download YouTube Video"
 description="Download video and audio from YT and 1000+ more sites with youtube-dl."
 
-dialog1="Place a YouTube here or other video streaming service stream URL here (ex. https://youtube.com/watch?v=sTSJcpB9B0Y):"
+dialog1="Place a YouTube or other video/audio streaming service stream URL here (ex. https://youtube.com/watch?v=sTSJcpB9B0Y):"
 dialog2="Would you like to download the video or the audio?"
+
+audiomsg="Audio"
+videomsg="Video"

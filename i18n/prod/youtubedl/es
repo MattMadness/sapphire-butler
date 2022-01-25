@@ -1,0 +1,8 @@
+name="Descargar vídeo de YouTube"
+description="Descargue video y audio de YT y más de 1000 sitios más con youtube-dl"
+
+dialog1="Coloque una URL de transmisión de YouTube u otro servicio de transmisión de video o audio aquí (ex. https://youtube.com/watch?v=sTSJcpB9B0Y):"
+dialog2="¿Quieres descargar el video o el audio?"
+
+videomsg="Video"
+audiomsg="Audio"

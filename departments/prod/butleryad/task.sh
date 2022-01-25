@@ -7,9 +7,9 @@ formattasklist() {
 		if [ -f "/usr/share/sapphire-butler/i18n/${tasks[$i]}/${BLANG}" ]; then
 			source /usr/share/sapphire-butler/i18n/${tasks[$i]}/$BLANG
 		elif [ -f "/usr/share/sapphire-butler/i18n/${tasks[$i]}/en" ]; then
-			source /usr/share/sapphire-butler/i18n/${tasks[$1]}/en
+			source /usr/share/sapphire-butler/i18n/${tasks[$i]}/en
 		else
-			source /usr/share/sapphire-butler/i18n/${tasks[$1]}/$(find -type f /usr/share/sapphire-butler/i18n/${tasks[$1]}/ | head -1)
+			source /usr/share/sapphire-butler/i18n/${tasks[$i]}/$(find -type f /usr/share/sapphire-butler/i18n/${tasks[$1]}/ | head -1)
 		fi
 		echo "$name "
 		echo "${tasks[$i]} "
