@@ -1,1 +1,1 @@
-xdg-open http://hyades.shoutca.st:8043/stream
+clementine -pl http://hyades.shoutca.st:8043/stream

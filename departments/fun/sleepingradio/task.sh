@@ -1,1 +1,1 @@
-xdg-open http://radio.stereoscenic.com/asp-h
+clementine -pl http://radio.stereoscenic.com/asp-h

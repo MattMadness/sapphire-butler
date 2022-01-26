@@ -2,7 +2,7 @@ savelocation="$(yad --file --text="$where" --filename=$(whoami)-homebackup-$(dat
 if [ "$?" == "0" ]; then
 	tar --exclude-caches --exclude="~/.cache" -cf $savelocation ~
 	if [ "$?" == "0" ]; then
-		butlermsg "$savelocation1 $archivename.tar.gz $savelocation2 $savelocation."
+		butlermsg "$savelocation1 $savelocation."
 	else
 		butlermsg "$failure"
 	fi
