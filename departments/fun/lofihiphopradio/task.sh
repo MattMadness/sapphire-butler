@@ -1,1 +1,1 @@
-clementine -pl http://hyades.shoutca.st:8043/stream
+mpv 'http://hyades.shoutca.st:8043/stream'

@@ -1,0 +1,211 @@
+.TH "BUTLER" "1" "02/04/2022" "Sapphire Butler 0.5" "Sapphire GLS"
+.SH "NAME"
+.PP
+butler \- an extensible task executor and script codebase
+.SH "SYNOPSIS"
+.PP
+butler [\fIdepartment\fR]/[\fItask\fR] || [\fItask\fR]
+.SH "DESCRIPTION"
+.PP
+Sapphire Butler is an extensible task executor and shell script codebase that aims to make certain tasks easier to do or simply more user friendly.
+.PP
+It is designed to work perfectly on Sapphire GLS and it's parent distributions Arch and Parabola as well as their children, but there is only a little support for other distributions and the use of Sapphire Butler on those systems is cautioned against until proper support can be given for them.
+.SH "DEPARTMENTS/TASKS"
+.PP
+Sapphire Butler provides a variety of tasks that can be ran on a system. These tasks are organized into departments, also known as categories.
+.SS Usage
+.PP
+Like real life butler work, \f[I]Tasks\f[R] are organized into
+\f[I]Departments\f[R].
+There are \f[I]Administrative (admin)\f[R], \f[I]Fun (fun)\f[R],
+\f[I]Network/Internet (net)\f[R], \f[I]Package Management (pkg)\f[R],
+and \f[I]Productivity (prod)\f[R] tasks.
+You can view all tasks in a department by simply typing the department.
+.IP
+.nf
+\f[C]
+> butler admin
+[\[u2756] BUTLER] Available tasks in the admin department:
+    Name                           Department/Task
+------------------------------------------------------------
+Home Backup                    admin/homebackup
+Turn on NTP                    admin/ntpon
+Install a LAMP Stack           admin/lampinstall
+Update GRUB Bootloader Config  admin/updategrub
+Enable zRAM for Swap Service   admin/zramswapenable
+Turn off NTP                   admin/ntpoff
+Uninstall zRAM for Swap        admin/zramswapuninstall
+Generate Locales               admin/localegen
+Disable zRAM for Swap Service  admin/zramswapdisable
+Install zRAM for Swap          admin/zramswapinstall
+\f[R]
+.fi
+.PP
+To run any task, specify the department followed by the task, separated
+by a forwards slash.
+.IP
+.nf
+\f[C]
+> butler net/neton
+[\[u2756] BUTLER] Running task \[dq]Turn on networking\[dq]...
+[\[u2756] BUTLER] I successfully turned on networking.
+[\[u2756] BUTLER] Task \[dq]Turn on networking\[dq] completed.
+\f[R]
+.fi
+.PP
+If a task name is unique, it is also possible to issue only the task
+name and run the task.
+.PP
+A yad-powered GUI interface is available by executing
+\f[C]butler prod/butleryad\f[R].
+.SS Developer Todo
+.IP \[bu] 2
+Code 50 Tasks.
+.IP \[bu] 2
+Translate all tasks into at least two non-English languages.
+.SS Contributing / Adding Tasks
+.PP
+Adding a task to Sapphire Butler is easy and only requires a bit of
+shell scripting knowledge (or more, if you are doing something more
+complicated).
+.PP
+If you want to make this process more simple, there is a Task Editor
+included with Sapphire Butler.
+If you want to make edits to the source tree, you can run the
+\f[C]taskeditor.sh\f[R] script with \f[C]bash taskeditor.sh\f[R]
+command.
+.PP
+If you have Sapphire Butler installed, you can use it\[cq]s
+\f[C]admin/taskeditor\f[R] task to make edits or add to your Sapphire
+Butler installation.
+Just remember that once you upgrade, your changes might be overwritten.
+.PP
+In this tutorial, we will manually create a task to play a Lofi Hip Hop
+Radio Station by working directly from the source tree.
+You can obtain the source tree by running
+\f[C]butler prod/butlersrc\f[R], and then you can enter it by running
+\f[C]cd sapphire-butler\f[R].
+.SS Creating the Language File
+.PP
+We need to create a language file so that your task has a name and
+description and is translatable.
+.PP
+First go into the i18n directory of the source tree, choose what
+department you want to use, and then change into that directory in the
+source tree and make another directory with your task name.
+Then change into that directory.
+.IP
+.nf
+\f[C]
+cd i18n/fun
+mkdir lofihiphopradio
+cd lofihiphopradio
+\f[R]
+.fi
+.PP
+Create a file that is named the language code of whatever language you
+making the language file for.
+For example, English is en, Spanish is es, Chinese is zh, French is fr,
+German is de, Italian is it, Japanese is ja, Russian is ru.
+Check here (https://saimana.com/list-of-country-locale-code/) for a
+larger list.
+.PP
+In this file, we need to define variables that will contain text in our
+spoken language.
+The required variables are \f[C]name\f[R] and \f[C]description\f[R].
+We should also define variables here that will contain text for our task
+later, but this is optional if there are none needed.
+.IP
+.nf
+\f[C]
+name=\[dq]Play LoFi Hip Hop Radio\[dq]
+description=\[dq]Plays a LoFi Hip Hop Icecast Radio Station.\[dq]
+\f[R]
+.fi
+.PP
+Write that file and then go back to the root of the source tree.
+.SS Creating the Task Script
+.PP
+Next choose what department you want to use, and then change into that
+directory in the source tree and make another directory with your task
+name.
+Then change into that directory.
+.IP
+.nf
+\f[C]
+cd departments/fun
+mkdir lofihiphopradio
+cd lofihiphopradio
+\f[R]
+.fi
+.PP
+Create a file called \f[C]task.sh\f[R].
+Here we write the script that will be executed when the user wants to
+use our task.
+Since our task right now is just playing an internet radio station, our
+task is very straight forward.
+.PP
+Things to note:
+.IP \[bu] 2
+There is no need to specify a shebang (ex.
+\f[C]#!/bin/bash\f[R]).
+.IP \[bu] 2
+Don\[cq]t use \f[C]echo\f[R] or \f[C]notify-send\f[R].
+Use \f[C]butlermsg\f[R] to send messages, if needed.
+.IP \[bu] 2
+There shouldn\[cq]t be any plaintext in this file unless it is being
+translated in the script.
+Use the variables you should have set in the language file in the
+\f[C]i18n\f[R] directory as that file is sourced before this script is
+run.
+.PP
+The contents of our \f[C]task.sh\f[R] will contain the following:
+.IP
+.nf
+\f[C]
+clementine -pl http://hyades.shoutca.st:8043/stream
+\f[R]
+.fi
+.PP
+Feel free to use this directory for any files that your task needs such
+as images or configuration files.
+.SS Creating the Dependency List
+.PP
+We have now written a task that uses the \f[C]clementine\f[R] music
+player.
+But we cannot just make a guess as to if the user has clementine
+installed.
+We have to add \f[C]clementine\f[R] to our \f[C]dependencies.list\f[R],
+a file containing the required packages for running your task.
+.PP
+While in our same directory we have the \f[C]task.sh\f[R] file, we need
+to make a \f[C]dependencies.list\f[R] file.
+This file will contain each package that our task needs on it\[cq]s own
+line.
+.PP
+For our task, we simply have \f[C]clementine\f[R] on it\[cq]s own line:
+.IP
+.nf
+\f[C]
+clementine
+\f[R]
+.fi
+.PP
+Say if we had a seperate package that the task needed, we would add it
+like this:
+.IP
+.nf
+\f[C]
+clementine
+otherpackage
+\f[R]
+.fi
+.SS Finishing Off
+.PP
+We have now created a task.
+Go back to the root of the source tree and then run
+\f[C]sudo make install\f[R] to install Sapphire Butler, then run your
+task to test it.
+.PP
+There are infinite possibilities of what you can put into a task.
+Check out some of the preexisting tasks to learn more tips and tricks.

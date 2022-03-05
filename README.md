@@ -6,7 +6,7 @@
 
 Sapphire Butler is an extensible task executor and shell script codebase that aims to make certain tasks easier to do or simply more user friendly. 
 
-It is designed to work perfectly on Sapphire GNU/Linux and it's parent distributions Arch and Parabola as well as their children, but there is only a little support for other distributions and the use of Sapphire Butler on those systems is cautioned against until proper support can be given for them.
+It is designed to work perfectly on Sapphire GLS and it's parent distributions Arch and Parabola as well as their children, but there is only a little support for other distributions and the use of Sapphire Butler on those systems is cautioned against until proper support can be given for them.
 
 ## Installation
 
@@ -48,6 +48,8 @@ To run any task, specify the department followed by the task, separated by a for
 [❖ BUTLER] Task "Turn on networking" completed.
 ```
 
+If a task name is unique, it is also possible to issue only the task name and run the task.
+
 A yad-powered GUI interface is available by executing `butler prod/butleryad`.
 
 ## Developer Todo
@@ -63,7 +65,7 @@ If you want to make this process more simple, there is a Task Editor included wi
 
 If you have Sapphire Butler installed, you can use it's `admin/taskeditor` task to make edits or add to your Sapphire Butler installation. Just remember that once you upgrade, your changes might be overwritten.
 
-In this tutorial, we will manually create a task to play a Lofi Hip Hop Radio Station.
+In this tutorial, we will manually create a task to play a Lofi Hip Hop Radio Station by working directly from the source tree. You can obtain the source tree by running `butler prod/butlersrc`, and then you can enter it by running `cd sapphire-butler`.
 
 ### Creating the Language File
 
@@ -78,12 +80,6 @@ cd lofihiphopradio
 ```
 
 Create a file that is named the language code of whatever language you making the language file for. For example, English is en, Spanish is es, Chinese is zh, French is fr, German is de, Italian is it, Japanese is ja, Russian is ru. Check [here](https://saimana.com/list-of-country-locale-code/) for a larger list.
-
-This will create a language file for English and open it in the Vim text editor. Use `nano` instead of `vim` if you don't know how to use Vim (If you don't know what it is, you don't).
-
-```bash
-vim en
-```
 
 In this file, we need to define variables that will contain text in our spoken language. The required variables are `name` and `description`. We should also define variables here that will contain text for our task later, but this is optional if there are none needed.
 
@@ -107,6 +103,7 @@ cd lofihiphopradio
 Create a file called `task.sh`. Here we write the script that will be executed when the user wants to use our task. Since our task right now is just playing an internet radio station, our task is very straight forward.
 
 Things to note:
+
 * There is no need to specify a shebang (ex. `#!/bin/bash`).
 * Don't use `echo` or `notify-send`. Use `butlermsg` to send messages, if needed.
 * There shouldn't be any plaintext in this file unless it is being translated in the script. Use the variables you should have set in the language file in the `i18n` directory as that file is sourced before this script is run.
@@ -114,10 +111,31 @@ Things to note:
 The contents of our `task.sh` will contain the following:
 
 ```bash
-xdg-open http://hyades.shoutca.st:8043/stream
+clementine -pl http://hyades.shoutca.st:8043/stream
 ```
 
 Feel free to use this directory for any files that your task needs such as images or configuration files.
+
+### Creating the Dependency List
+
+We have now written a task that uses the `clementine` music player. But we cannot just make a guess as to if the user has clementine installed. We have to add `clementine` to our `dependencies.list`, a file containing the required packages for running your task.
+
+While in our same directory we have the `task.sh` file, we need to make a `dependencies.list` file. This file will contain each package that our task needs on it's own line.
+
+For our task, we simply have `clementine` on it's own line:
+
+```
+clementine
+```
+
+Say if we had a seperate package that the task needed, we would add it like this:
+
+```
+clementine
+otherpackage
+```
+
+### Finishing Off
 
 We have now created a task. Go back to the root of the source tree and then run `sudo make install` to install Sapphire Butler, then run your task to test it.
 

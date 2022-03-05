@@ -17,12 +17,12 @@ fi
 
 m_help() {
     # Display help message
-    echo "sapphire-butler, a butler for Sapphire Linux."
+    echo "sapphire-butler, a task executor for Sapphire GLS."
     echo
     echo "This program has preconfigured tasks that are categorized into"
     echo "departments."
     echo
-    echo "Copyright (C) 2021 Matthew Evan"
+    echo "Copyright (C) 2022 Matthew Evan"
     echo
     echo "This program is free software; you can redistribute it and/or modify"
     echo "under the terms of the GNU General Public License as published by"
@@ -79,7 +79,8 @@ butlerrun() {
         if [ ${#reqdeps} != 0 ]; then # If the user needs to install any dependencies, try to get the user to install them.
             butlermsg "${depnum} dependencies found. Task \"$name\" needs ${#reqdeps[@]} more dependencies..."
             sudo pacman -S ${reqdeps[@]}
-            if [ $? != 0 ]; then # If the pacman process did not successfully run, do not continue.  butlermsg "Package transfer failed. Not running task."
+            if [ $? != 0 ]; then # If the pacman process did not successfully run, do not continue.  
+                butlermsg "Package transfer failed. Not running task."
                 exit
             fi
         fi

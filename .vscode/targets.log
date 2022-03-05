@@ -1,0 +1,445 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.3
+ 
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Sat Mar  5 12:25:54 2022
+
+# Variables
+
+# environment
+GDK_BACKEND = x11
+# environment
+LC_ALL = C
+# environment
+NO_AT_BRIDGE = 1
+# environment
+Black = \e[0;30m
+# environment
+BBlack = \e[1;30m
+# environment
+On_Purple = \e[45m
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d46cf168-5a7a-437d-8fbd-d48ce7b75043.sock
+# environment
+VSCODE_CWD = /home/matthew/Projects/SoftwareDevelopment/sapphire-butler
+# environment
+WINDOWID = 6291458
+# environment
+RAWWAVE_PATH = /usr/share/stk/rawwaves
+# environment
+GDM_LANG = en_US.utf8
+# default
+MAKE_COMMAND := make
+# environment
+GTK3_MODULES = xapp-gtk3-module
+# environment
+HISTFILE = /home/matthew/.zhistory
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+Green = \e[0;32m
+# environment
+count = 7
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+.VARIABLES := 
+# environment
+PWD = /home/matthew/Projects/SoftwareDevelopment/sapphire-butler
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+OPCODE6DIR = /usr/lib/csound/plugins64-6.0
+# environment
+HOSTNAME = matthew-laptop
+# environment
+MAIL = /var/spool/mail/matthew
+# environment
+XDG_DATA_DIRS = /home/matthew/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
+# environment
+OLDPWD = /home/matthew/Projects/SoftwareDevelopment
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+VSCODE_LOG_STACK = false
+# automatic
+%F = $(notdir $%)
+# environment
+ALACRITTY_SOCKET = /run/user/1000/Alacritty-:0-16119.sock
+# environment
+VSCODE_CODE_CACHE_PATH = /home/matthew/.config/VSCodium/CachedData/b5205cc8eb4fbaa726835538cd82372cc0222d43
+# environment
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session1
+# environment
+On_Red = \e[41m
+# environment
+LANG = C
+# environment
+PR_WHITE = %{[1m[37m%}
+# environment
+XAUTHORITY = /home/matthew/.Xauthority
+# default
+.LOADED := 
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# makefile
+MAKEFLAGS = pqrR
+ 
+# makefile
+CURDIR := /home/matthew/Projects/SoftwareDevelopment/sapphire-butler
+# environment
+PERL5LIB = /home/matthew/perl5/lib/perl5
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+MFLAGS = -pqrR
+ 
+# default
+.SHELLFLAGS := -c
+# environment
+HISTSIZE = 1000
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+XDG_SESSION_DESKTOP = awesome
+# environment
+BYellow = \e[1;33m
+# makefile (from 'makefile', line 1)
+MAKEFILE_LIST := makefile
+# environment
+Blue = \e[0;34m
+# environment
+PR_LIGHT_WHITE = %{[37m%}
+# automatic
+@F = $(notdir $@)
+# environment
+PR_RED = %{[1m[31m%}
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+VSCODE_PID = 16827
+# environment
+PR_LIGHT_YELLOW = %{[33m%}
+# environment
+XDG_SESSION_TYPE = x11
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+BBlue = \e[1;34m
+# environment
+On_Cyan = \e[46m
+# automatic
+*F = $(notdir $*)
+# environment
+PR_GREEN = %{[1m[32m%}
+# environment
+On_White = \e[47m
+# environment
+QT_QPA_PLATFORMTHEME = qt5ct
+# environment
+CHROME_DESKTOP = codium-url-handler.desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:abstract=/tmp/dbus-1LZGQpgYDY,guid=d6e66c04d544b63022c31872622026a9
+# environment
+PR_MAGENTA = %{[1m[35m%}
+# environment
+BCyan = \e[1;36m
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+PLAN9 = /opt/plan9
+# environment
+White = \e[0;37m
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# makefile
+SHELL = /bin/sh
+# default
+MAKECMDGOALS := all
+# environment
+DOTNET_BUNDLE_EXTRACT_BASE_DIR = /home/matthew/.cache/dotnet_bundle_extract
+# environment
+SHLVL = 2
+# environment
+BPurple = \e[1;35m
+# environment
+MAKELEVEL := 0
+# environment
+PR_LIGHT_GREEN = %{[32m%}
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+PATH = /home/matthew/perl5/bin:/usr/local/bin:/usr/local/sbin/:~/.local/bin/:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/opt/android-sdk/platform-tools:/opt/cxoffice/bin:/home/matthew/.dotnet/tools:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/share/mycroft-core/bin:/usr/share/mycroft-core:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/opt/plan9/bin:~/.local/bin:/opt/android-sdk/platform-tools:/opt/cxoffice/bin:/usr/lib/jvm/default/bin:/usr/share/mycroft-core/bin:/opt/plan9/bin
+# default
+MAKEFILES := 
+# environment
+Cyan = \e[0;36m
+# environment
+MOTD_SHOWN = pam
+# environment
+Yellow = \e[0;33m
+# automatic
+^F = $(notdir $^)
+# environment
+RPS1 = %{[1m[31m%}(%D{%l:%M %p })%{(B[m%}
+# environment
+color = WHITE
+# environment
+VSCODE_LOG_NATIVE = false
+# environment
+PR_BLUE = %{[1m[34m%}
+# automatic
+?F = $(notdir $?)
+# environment
+On_Blue = \e[44m
+# environment
+XDG_SEAT = seat0
+# environment
+PR_LIGHT_CYAN = %{[36m%}
+# environment
+PERL_LOCAL_LIB_ROOT = /home/matthew/perl5
+# environment
+ALACRITTY_LOG = /tmp/Alacritty-16119.log
+# environment
+LS_COLORS = rs=0:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:tw=30;42:ow=34;42:st=37;44:ex=01;32:
+# automatic
++F = $(notdir $+)
+# environment
+On_Yellow = \e[43m
+# environment
+XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
+# environment
+DESKTOP_SESSION = awesome
+# environment
+PR_CYAN = %{[1m[36m%}
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+BROWSER = /usr/bin/qutebrowser
+# environment
+On_Green = \e[42m
+# environment
+LOGNAME = matthew
+# environment
+PR_YELLOW = %{[1m[33m%}
+# environment
+CSSTRNGS = /usr/share/locale
+# environment
+NC = \e[m
+# environment
+JDK_JAVA_OPTIONS = -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel
+# environment
+XDG_VTNR = 7
+# makefile
+.DEFAULT_GOAL := all
+# environment
+SAVEHIST = 1000
+# environment
+EDITOR = /usr/bin/vim
+# environment
+DISPLAY = :0
+# environment
+GTK_MODULES = canberra-gtk-module
+# environment
+USER = matthew
+# default
+MAKE_VERSION := 4.3
+# environment
+On_Black = \e[40m
+# environment
+Red = \e[0;31m
+# environment
+PR_LIGHT_MAGENTA = %{[35m%}
+# environment
+PR_NO_COLOR = %{(B[m%}
+# environment
+_ = /usr/bin/make
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# environment
+BRed = \e[1;31m
+# environment
+COLORTERM = truecolor
+# environment
+XDG_SESSION_CLASS = user
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /home/matthew
+# environment
+Purple = \e[0;35m
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+PR_LIGHT_BLUE = %{[34m%}
+# environment
+VSCODE_IPC_HOOK = /run/user/1000/vscode-489cd648-1.65.0-main.sock
+# environment
+TERM = xterm-256color
+# environment
+BGreen = \e[1;32m
+# environment
+XDG_SESSION_ID = 2
+# environment
+PR_LIGHT_RED = %{[31m%}
+# environment
+PERL_MM_OPT = INSTALL_BASE=/home/matthew/perl5
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# default
+SUFFIXES := 
+# environment
+VSCODE_CLI = 1
+# environment
+PERL_MB_OPT = --install_base "/home/matthew/perl5"
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/matthew
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink guile load
+# environment
+BWhite = \e[1;37m
+# environment
+DOTNET_ROOT = /usr/share/dotnet
+# environment
+GDMSESSION = awesome
+# variable set hash-table stats:
+# Load=153/1024=15%, Rehash=0, Collisions=20/186=11%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 2054, inode 43427442): 13 files, no impossibilities.
+
+# 13 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+uninstall:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 29):
+	@rm -f $(PREFIX)/usr/bin/butler
+	@rm -rf $(PREFIX)/usr/share/sapphire-butler
+	@rm $(PREFIX)/usr/share/man/man1/butler.1
+	@rm $(PREFIX)/usr/share/pixmaps/butler.svg
+	@rm $(PREFIX)/usr/share/pixmaps/butlerface.svg
+	@rm $(PREFIX)/usr/share/applications/sapphire-butler-yad.desktop
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all:
+#  Command line target.
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := all
+# automatic
+# * := 
+# automatic
+# < := 
+# automatic
+# + := 
+# automatic
+# % := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/11=9%
+ 
+#  recipe to execute (from 'makefile', line 2):
+	@echo Run \'make install\' to install Sapphire Butler.
+
+# Not a target:
+makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-05 00:06:13.123447444
+#  File has been updated.
+#  Successfully updated.
+
+install:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 5):
+	@#@mkdir --parents $(PREFIX)/usr/share/licenses/sapphire-butler/
+	@#@cp LICENSE $(PREFIX)/usr/share/licenses/sapphire-butler/
+	@mkdir --parents $(PREFIX)/usr/share/sapphire-butler
+	@cp art/butler.png $(PREFIX)/usr/share/sapphire-butler/
+	@cp art/butlerface.png $(PREFIX)/usr/share/sapphire-butler/
+	@cp -r departments $(PREFIX)/usr/share/sapphire-butler/
+	@cp -r i18n $(PREFIX)/usr/share/sapphire-butler/
+	@cp taskeditor.sh $(PREFIX)/usr/share/sapphire-butler/
+	@chmod +x $(PREFIX)/usr/share/sapphire-butler/taskeditor.sh
+	@chmod -R a+r $(PREFIX)/usr/share/sapphire-butler
+	@mkdir --parents $(PREFIX)/usr/share/applications
+	@cp other/sapphire-butler-yad.desktop $(PREFIX)/usr/share/applications/
+	@mkdir --parents $(PREFIX)/usr/share/pixmaps
+	@cp art/butler.svg $(PREFIX)/usr/share/pixmaps/
+	@cp art/butlerface.svg $(PREFIX)/usr/share/pixmaps/
+	@mkdir --parents $(PREFIX)/etc/
+	@cp --no-clobber other/sapphire-butler.conf $(PREFIX)/etc/
+	@mkdir --parents $(PREFIX)/usr/share/man/man1/
+	@cp other/butler.1 $(PREFIX)/usr/share/man/man1/
+	@mkdir --parents $(PREFIX)/usr/bin
+	@cp butler $(PREFIX)/usr/bin/
+	@chmod +x $(PREFIX)/usr/bin/butler
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# files hash-table stats:
+# Load=6/1024=1%, Rehash=0, Collisions=0/18=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 20 / storage = 166 B / avg = 8 B
+# current buf: size = 8162 B / used = 166 B / count = 20 / avg = 8 B
+
+# strcache performance: lookups = 29 / hit rate = 31%
+# hash-table stats:
+# Load=20/8192=0%, Rehash=0, Collisions=0/29=0%
+# Finished Make data base on Sat Mar  5 12:25:54 2022
+
+ 
