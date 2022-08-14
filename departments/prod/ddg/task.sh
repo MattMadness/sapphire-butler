@@ -1,0 +1,1 @@
+w3m lite.duckduckgo.com/lite

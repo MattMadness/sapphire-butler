@@ -1,0 +1,5 @@
+name="Minecraft Game Server"
+description="Start a Minecraft Game Server."
+
+success="Minecraft server was started successfully and is enabled for next bootup."
+failure="Something went wrong while starting the Minecraft Server. If you haven't configured it yet, you should edit the server's configuration file at /etc/conf.d/minecraft."

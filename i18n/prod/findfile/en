@@ -1,0 +1,5 @@
+name="Find File"
+description="Find a file in the current directory."
+
+fileq="Search:"
+err="Please add a query."

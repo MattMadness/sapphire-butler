@@ -1,19 +1,21 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # GNU Make 4.3
- 
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Mar  5 12:25:54 2022
+# Make data base, printed on Sun Jun 19 17:28:45 2022
 
 # Variables
 
 # environment
+GO111MODULE = off
+# environment
 GDK_BACKEND = x11
 # environment
+ 
 LC_ALL = C
 # environment
 NO_AT_BRIDGE = 1
@@ -24,11 +26,11 @@ BBlack = \e[1;30m
 # environment
 On_Purple = \e[45m
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d46cf168-5a7a-437d-8fbd-d48ce7b75043.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-72b29a45-bb16-4c65-9ccd-ece7dcead796.sock
 # environment
 VSCODE_CWD = /home/matthew/Projects/SoftwareDevelopment/sapphire-butler
 # environment
-WINDOWID = 6291458
+WINDOWID = 65011714
 # environment
 RAWWAVE_PATH = /usr/share/stk/rawwaves
 # environment
@@ -62,7 +64,7 @@ MAIL = /var/spool/mail/matthew
 # environment
 XDG_DATA_DIRS = /home/matthew/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 # environment
-OLDPWD = /home/matthew/Projects/SoftwareDevelopment
+OLDPWD = /home/matthew/Projects/SoftwareDevelopment/sapphire-butler/departments
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
@@ -70,9 +72,9 @@ VSCODE_LOG_STACK = false
 # automatic
 %F = $(notdir $%)
 # environment
-ALACRITTY_SOCKET = /run/user/1000/Alacritty-:0-16119.sock
+ALACRITTY_SOCKET = /run/user/1000/Alacritty-:0-5435.sock
 # environment
-VSCODE_CODE_CACHE_PATH = /home/matthew/.config/VSCodium/CachedData/b5205cc8eb4fbaa726835538cd82372cc0222d43
+VSCODE_CODE_CACHE_PATH = /home/matthew/.config/VSCodium/CachedData/c722ca6c7eed3d7987c0d5c3df5c45f6b15e77d1
 # environment
 XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session1
 # environment
@@ -89,20 +91,19 @@ XAUTHORITY = /home/matthew/.Xauthority
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # makefile
 MAKEFLAGS = pqrR
- 
 # makefile
 CURDIR := /home/matthew/Projects/SoftwareDevelopment/sapphire-butler
 # environment
 PERL5LIB = /home/matthew/perl5/lib/perl5
 # environment
 VSCODE_PIPE_LOGGING = true
+ 
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
 MFLAGS = -pqrR
- 
 # default
 .SHELLFLAGS := -c
 # environment
@@ -126,7 +127,7 @@ PR_RED = %{[1m[31m%}
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 16827
+VSCODE_PID = 5492
 # environment
 PR_LIGHT_YELLOW = %{[33m%}
 # environment
@@ -148,7 +149,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 CHROME_DESKTOP = codium-url-handler.desktop
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:abstract=/tmp/dbus-1LZGQpgYDY,guid=d6e66c04d544b63022c31872622026a9
+DBUS_SESSION_BUS_ADDRESS = unix:abstract=/tmp/dbus-BN8BnnKGBB,guid=130930ae1225720227a98a4d62af4d8b
 # environment
 PR_MAGENTA = %{[1m[35m%}
 # environment
@@ -180,7 +181,7 @@ PR_LIGHT_GREEN = %{[32m%}
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /home/matthew/perl5/bin:/usr/local/bin:/usr/local/sbin/:~/.local/bin/:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/opt/android-sdk/platform-tools:/opt/cxoffice/bin:/home/matthew/.dotnet/tools:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/share/mycroft-core/bin:/usr/share/mycroft-core:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/opt/plan9/bin:~/.local/bin:/opt/android-sdk/platform-tools:/opt/cxoffice/bin:/usr/lib/jvm/default/bin:/usr/share/mycroft-core/bin:/opt/plan9/bin
+PATH = /home/matthew/perl5/bin:/usr/local/bin:/usr/local/sbin/:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/opt/android-sdk/platform-tools:/home/matthew/.dotnet/tools:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/share/mycroft-core/bin:/usr/share/mycroft-core:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/opt/plan9/bin:/home/matthew/.local/bin:/opt/android-sdk/platform-tools:/usr/lib/jvm/default/bin:/usr/share/mycroft-core/bin:/opt/plan9/bin
 # default
 MAKEFILES := 
 # environment
@@ -210,7 +211,7 @@ PR_LIGHT_CYAN = %{[36m%}
 # environment
 PERL_LOCAL_LIB_ROOT = /home/matthew/perl5
 # environment
-ALACRITTY_LOG = /tmp/Alacritty-16119.log
+ALACRITTY_LOG = /tmp/Alacritty-5435.log
 # environment
 LS_COLORS = rs=0:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:tw=30;42:ow=34;42:st=37;44:ex=01;32:
 # automatic
@@ -286,13 +287,15 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 PR_LIGHT_BLUE = %{[34m%}
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-489cd648-1.65.0-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-489cd648-1.65.2-main.sock
 # environment
 TERM = xterm-256color
 # environment
+HG = /usr/bin/hg
+# environment
 BGreen = \e[1;32m
 # environment
-XDG_SESSION_ID = 2
+XDG_SESSION_ID = 3
 # environment
 PR_LIGHT_RED = %{[31m%}
 # environment
@@ -320,7 +323,7 @@ DOTNET_ROOT = /usr/share/dotnet
 # environment
 GDMSESSION = awesome
 # variable set hash-table stats:
-# Load=153/1024=15%, Rehash=0, Collisions=20/186=11%
+# Load=155/1024=15%, Rehash=0, Collisions=24/188=13%
 
 # Pattern-specific Variable Values
 
@@ -373,6 +376,7 @@ all:
 # + := 
 # automatic
 # % := 
+ 
 # automatic
 # ^ := 
 # automatic
@@ -381,7 +385,6 @@ all:
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
- 
 #  recipe to execute (from 'makefile', line 2):
 	@echo Run \'make install\' to install Sapphire Butler.
 
@@ -440,6 +443,6 @@ install:
 # strcache performance: lookups = 29 / hit rate = 31%
 # hash-table stats:
 # Load=20/8192=0%, Rehash=0, Collisions=0/29=0%
-# Finished Make data base on Sat Mar  5 12:25:54 2022
+# Finished Make data base on Sun Jun 19 17:28:45 2022
 
  

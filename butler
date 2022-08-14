@@ -1,5 +1,26 @@
 #!/bin/bash
 
+# sapphire-butler, a task executor for Sapphire GLS.
+#
+# This program has preconfigured tasks that are categorized into
+# departments.
+#
+# Copyright (C) 2022 Matthew Evan
+#
+# This program is free software; you can redistribute it and/or modify
+# under the terms of the GNU General Public License as published by
+# Free Software Foundation; either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software Foundation,
+# Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
+ 
 # Get language
 BLANG=$(echo $LANG | cut -c1-2)
 
@@ -41,6 +62,7 @@ m_help() {
     echo "Syntax: butler [DEPARTMENT/TASK]"
     echo "Available departments:"
     echo "admin  Administrative Tasks"
+    echo "aux    Auxiliary Tasks"
     echo "fun    Fun Tasks"
     echo "net    Network/Internet Tasks"
     echo "pkg    Package Management Tasks"
@@ -95,18 +117,23 @@ butlermsg() {
     # Displays the requested message according to the user's settings
     echo -e "\033[01;36m[❖ BUTLER]\033[0m $1"
     if [ "$enable_notifications" == "true" ]; then
-	    notify-send -u low "Sapphire Butler" "$1"
+        if [ -f "/usr/bin/notify-send" ]; then
+	        notify-send -u low "Sapphire Butler" "$1" 
+        fi
     fi
     if [ "$enable_espeak" == "true" ]; then
-	    espeak "$1" # "Cool" haxor kids use espeak.
+        if [ -f "/usr/bin/espeak" ]; then
+	        espeak "$1" # "Cool" haxor kids use espeak.
+        fi
     fi
 }
 
 # Check if the user has supplied an argument
 if [ -n "$1" ]; then
+    taskstodo=$@ # Set this for auxiliary.
     # Find out what the user wants for each argument.
-    for tasktodo in $@; do
-	# If the user has supplied a task as an arguement, run it
+    for tasktodo in ${taskstodo[@]}; do
+	# If the user has supplied a task as an argument, run it
       	if [ -f "/usr/share/sapphire-butler/departments/$tasktodo/task.sh" ]; then
 	    butlerrun "$tasktodo"
 	# If the user has supplied a department as an arguement, list the tasks in that department

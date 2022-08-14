@@ -1,0 +1,4 @@
+name="Weather Report"
+description="Obtain a local weather report from the Internet."
+
+err="Something went wrong. Maybe you aren't connected to the Internet, or wttr.in servers are down."

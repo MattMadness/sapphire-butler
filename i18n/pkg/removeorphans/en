@@ -1,0 +1,2 @@
+name="Remove Orphan Packages"
+description="Removes orphan (packages that were installed as dependencies but no longer needed) packages."

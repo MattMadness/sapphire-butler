@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/matthew/Projects/SoftwareDevelopment/sapphire-butler'
+echo Run \'make install\' to install Sapphire Butler.
+make: Leaving directory '/home/matthew/Projects/SoftwareDevelopment/sapphire-butler'
+ 

@@ -51,24 +51,27 @@ while [ $response != 4 ]; do
         fi
     
         mkdir i18n/$dt
-        echo -e "name=\"TASK NAME HERE\"\ndescription=\"DESCRIPTION HERE\"" > i18n/$dt/$LANG
+        echo -e "name=\"TASK NAME HERE\"\ndescription=\"DESCRIPTION HERE\"" > i18n/$dt/$BLANG
         mkdir departments/$dt
         touch departments/$dt/task.sh
         
         echo "Ready."
         
-        while [ $response != "4" ]; do
+        while [ $response != "5" ]; do
             echo "What would you like to do now?"
             echo "(1) Edit the i18n file."
             echo "(2) Edit the task file."
-            echo "(3) Start a shell."
-            echo "(4) Exit."
+            echo "(3) Edit the dependencies file."
+            echo "(4) Start a shell."
+            echo "(5) Exit."
             read -r -p "? " response
             if [ $response == "1" ]; then
     	        $EDITOR i18n/$dt/$BLANG
             elif [ $response == "2" ]; then
     	        $EDITOR departments/$dt/task.sh
             elif [ $response == "3" ]; then
+    	        $EDITOR departments/$dt/dependencies.list
+            elif [ $response == "4" ]; then
                 $SHELL
             fi
         done

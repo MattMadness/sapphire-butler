@@ -1,0 +1,7 @@
+name="Git Add, Commit, and Push"
+description="Use Git and add all files to the index, commit them, and push the changes."
+
+msgcommit="Commit Message:"
+msgerrcommit="Something went wrong while from committing changes."
+msgerradd="Something went wrong while adding files to the index."
+dotgit="This directory does not seem to be a git repository."
