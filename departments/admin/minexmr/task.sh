@@ -67,17 +67,17 @@ else
 	xmrConfMod ".pools.pass = $minername:$email"
 	xmrConfMod ".pause-on-battery = $pauseonbattery"
 	xmrConfMod ".pause-on-active = $pauseonactive"
-	butlermsg "Further configuration may be needed. Opening the file now..."
+	butlermsg "$furtherconfiguration"
 	working=false
 	while [ $working == "false" ] ; do
 		$EDITOR ~/.xmrig.json
-		butlermsg "Testing configuration..."
+		butlermsg "$configtest"
 		xmrig --dry-run -c ~/.xmrig.json
 		if [ $? == 0 ]; then
-			butlermsg "XMRig successfully configured. Run this task again to start the miner."
+			butlermsg "$configtestsuccess"
 			working=true
 		else
-			butlermsg "XMRig config is not functional. Please check the errors provided and try again."
+			butlermsg "$configtestfailure"
 			working=false
 		fi
 	done
